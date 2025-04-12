@@ -1,0 +1,10 @@
+client: str_len
+client: sends signed int (string lenght)
+client: pause (wait for server malloc string lenght)
+server: gets signed int (string lenght)
+server: if received 32 bits malloc string lenghts + \0 and change signal handler to handle string
+server: sends signal to client
+client: is unpaused now
+client: sends the string, \0 included
+server: while receiving sinals check every char if it is \0
+server: if \0 found print message, free everything
